@@ -2,6 +2,7 @@ int boxW, boxH;
 
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   noFill();
   stroke(30);
   strokeWeight(3);
@@ -21,5 +22,11 @@ void draw() {
       }
       rect(x*boxW, y*boxH, boxW, boxH);
     }
+  }
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch09.jpg");
   }
 }

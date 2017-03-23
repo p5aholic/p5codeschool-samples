@@ -3,15 +3,16 @@ int x2, y2, radius2; // 右の円の座標と半径
 
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   noStroke();
   // 左の円の座標と半径を設定
-  x1 = 150;
-  y1 = 100;
-  radius1 = 100;
+  x1 = 200;
+  y1 = 150;
+  radius1 = 150;
   // 右の円の座標と半径を設定
-  x2 = 450;
-  y2 = 200;
-  radius2 = 50;
+  x2 = 480;
+  y2 = 270;
+  radius2 = 100;
 }
 
 void draw() {
@@ -44,4 +45,10 @@ boolean mouseOver(int x, int y, int radius) {
   }
   // 重なっていなければfalseを返す
   else return false;
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch07.jpg");
+  }
 }

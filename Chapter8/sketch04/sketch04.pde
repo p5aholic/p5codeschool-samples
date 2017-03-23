@@ -3,6 +3,7 @@ color c1, c2;       // 円の色と線の色
 
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   x = width/2;
   y = height/2;
   diameter = 150;
@@ -31,4 +32,10 @@ void draw() {
   // 線
   stroke(c2);
   line(x, y, mouseX, mouseY);
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch04.jpg");
+  }
 }

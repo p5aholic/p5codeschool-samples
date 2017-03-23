@@ -3,6 +3,7 @@ int cageSize;   // 檻の大きさ
 
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   rectMode(CENTER);
   x = width/2;
   y = height/2;
@@ -26,4 +27,10 @@ void draw() {
   // 箱を描画
   fill(0);
   rect(x, y, size, size);
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch02.jpg");
+  }
 }

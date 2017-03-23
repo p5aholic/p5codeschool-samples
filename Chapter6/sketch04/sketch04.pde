@@ -4,6 +4,7 @@ int ballSize; // ボールの大きさ
 
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   noStroke();
   fill(255);
   // ボールの初期値を設定
@@ -11,7 +12,7 @@ void setup() {
   y = height/2;
   vx = 3;
   vy = 2;
-  ballSize = 40;
+  ballSize = 50;
 }
 
 void draw() {
@@ -39,5 +40,11 @@ void draw() {
   // 下の壁にぶつかったら
   if (y+ballSize/2 >= height) {
     vy *= -1; // y軸方向の速度反転
+  }
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch04.jpg");
   }
 }

@@ -1,4 +1,5 @@
 size(960, 540);
+pixelDensity(displayDensity());
 background(255);
 
 int boxW = width/10;
@@ -21,3 +22,4 @@ for (int x = 0; x < 10; x++) {
     rect(x*boxW, y*boxH, boxW, boxH);
   }
 }
+saveFrame("sketch08.jpg");

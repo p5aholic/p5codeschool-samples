@@ -1,5 +1,6 @@
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   stroke(0);
 }
 
@@ -18,5 +19,11 @@ void draw() {
   strokeWeight(yWeight);
   for (int y = 0; y <= height; y += 50) {
     line(0, y, width, y);
+  }
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch05.jpg");
   }
 }

@@ -1,5 +1,6 @@
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   noFill();
   strokeWeight(5);
   rectMode(CENTER);
@@ -28,5 +29,11 @@ void draw() {
   else {
     stroke(65, 180, 110);
     triangle(mouseX-25, mouseY+25, mouseX, mouseY-25, mouseX+25, mouseY+25);
+  }
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch07.jpg");
   }
 }

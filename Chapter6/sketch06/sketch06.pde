@@ -1,5 +1,6 @@
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   noFill();
   strokeWeight(5);
   rectMode(CENTER);
@@ -17,5 +18,11 @@ void draw() {
   else {
     stroke(0);
     rect(mouseX, mouseY, 50, 50);
+  }
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch06.jpg");
   }
 }

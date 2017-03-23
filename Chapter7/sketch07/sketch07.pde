@@ -1,4 +1,5 @@
 size(960, 540);
+pixelDensity(displayDensity());
 background(255);
 colorMode(HSB, 360, 100, 100);
 
@@ -14,3 +15,4 @@ for (int y = 0; y < 10; y++) {
     brightness++;
   }
 }
+saveFrame("sketch07.jpg");

@@ -1,4 +1,5 @@
 size(960, 540);
+pixelDensity(displayDensity());
 background(255);
 noStroke();
 fill(30);
@@ -20,3 +21,4 @@ switch(r) {
     background(random(255), random(255), random(255));
     break; // switchのブロックを抜ける
 }
+saveFrame("sketch09.jpg");

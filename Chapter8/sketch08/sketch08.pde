@@ -1,5 +1,6 @@
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   background(255);
   // 1秒間に1回実行
   frameRate(1);
@@ -24,4 +25,10 @@ void face(int x, int y, int size) {
   fill(0);
   // 口
   ellipse(x, y+size/4, size/3, size/3);
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch08.jpg");
+  }
 }
