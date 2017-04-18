@@ -1,17 +1,25 @@
 void setup() {
-  size(960, 540);
-  stroke(0, 255, 0);
-  strokeWeight(20);
+  size(960, 540, P3D);
+  noLoop();
 }
 
 void draw() {
-  background(255);
-  // 原点を画面中心に移動
-  translate(width/2, height/2);
+  background(0);
 
-  // sin()が返した値をyに代入
-  float y = 100 * sin(frameCount*0.05);
+  pushMatrix();
+  translate(width/2-100, height/2, 0);
+  noStroke();
+  fill(128);
+  // 半径100の球体
+  sphere(100);
+  popMatrix();
 
-  // yを表す点を描画してみる
-  point(0, y);
+  pushMatrix();
+  translate(width/2+100, height/2, 0);
+  stroke(128);
+  noFill();
+  // 半径100の球体
+  sphere(100);
+  popMatrix();
+  saveFrame("sketch02.jpg");
 }

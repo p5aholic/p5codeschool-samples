@@ -1,5 +1,2 @@
-// シード値を設定
-randomSeed(10);
-for (int i = 0; i < 10; i++) {
-  println(random(100));
-}
+int[] data = {20, 12, 45, 65, 78, 32};
+println(data);

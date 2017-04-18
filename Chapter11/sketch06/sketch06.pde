@@ -1,17 +1,22 @@
 void setup() {
-  size(960, 540);
+  size(960, 540, P3D);
   noLoop();
-  noStroke();
-  fill(0);
+  stroke(0);
+  strokeWeight(15);
 }
 
 void draw() {
   background(255);
+  translate(width/2, height/2, 0);
 
-  // 左端から右端まで15px間隔で円を描画
-  for (int x = 0; x <= width; x += 15) {
-    // xに応じて高さを変える
-    float y = height/2 + 100 * sin(x*0.01);
-    ellipse(x, y, 15, 15);
+  // 縦横に５つの点を表示
+  for (int x = -2; x <= 2; x++) {
+    for (int y = -2; y <= 2; y++) {
+      float pointX = x * 50;
+      float pointY = y * 50;
+      float pointZ = -x * 50;
+      point(pointX, pointY, pointZ);
+    }
   }
+  saveFrame("sketch06.jpg");
 }

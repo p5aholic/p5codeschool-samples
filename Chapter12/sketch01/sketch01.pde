@@ -1,27 +1,10 @@
-void setup() {
-  size(960, 540);
-  noLoop();
-  stroke(0);
-  strokeWeight(5);
-}
-
-void draw() {
-  background(255);
-  translate(width/2, height/2);
-
-  // 長さがランダムな線を放射状に描画する
-  for (int i = 0; i < 360; i += 5) {
-    float angle = radians(i);
-    // ランダムな半径
-    float radius = random(200);
-    float x = radius * cos(angle);
-    float y = radius * sin(angle);
-    // 中心から(x, y)に向かう線
-    line(0, 0, x, y);
-  }
-}
-
-// マウスクリックで再描画
-void mousePressed() {
-  redraw();
-}
+int[] data;        // int型配列のdataを宣言
+data = new int[5]; // 要素数5のint型配列の実態をdataに代入
+// dataのそれぞれの要素に数値を代入
+data[0] = 53;
+data[1] = 22;
+data[2] = 84;
+data[3] = 17;
+data[4] = 49;
+// dataの中身を出力
+println(data);

@@ -1,18 +1,7 @@
-void setup() {
-  size(960, 540);
-  noLoop();
-  stroke(0);
-  strokeWeight(5);
+int numData = 50; // 配列の要素数
+int[] data = new int[numData]; // 配列の宣言と代入
+// dataの要素に値を入れる
+for (int i = 0; i < numData; i++) {
+  data[i] = (int)random(height);
 }
-
-void draw() {
-  background(255);
-
-  // 左端から右端まで5px間隔で点を描画する
-  for (int x = 0; x <= width; x += 5) {
-    // 点のy座標をrandom()で変動させる
-    float y = height/2 + random(-100, 100);
-    // 点を描画
-    point(x, y);
-  }
-}
+println(data);

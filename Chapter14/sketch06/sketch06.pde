@@ -1,35 +1,36 @@
-float x, y;   // ボールの中心座標
-float vx, vy; // ボールの速度
-int radius;   // ボールの半径
-color c;      // ボールの色
+Ball b1, b2;
 
 void setup() {
   size(960, 540);
-  // 初期値を設定
-  radius = (int)random(10, 20);
-  x = random(radius, width-radius);
-  y = random(radius, height-radius);
-  vx = random(-5, 5);
-  vy = random(-5, 5);
-  c = color(random(255), random(255), random(255), random(255));
+  // size()使用後にBall()を呼び出す
+  b1 = new Ball();
+  b2 = new Ball();
 }
 
 void draw() {
   background(255);
 
-  // ボールの位置を更新
-  x += vx;
-  y += vy;
-  // 左右の壁との当たり判定
-  if (x-radius <= 0 || x+radius >= width) {
-    vx *= -1;
-  }
-  // 上下の壁との当たり判定
-  if (y-radius <= 0 || y+radius >= height) {
-    vy *= -1;
-  }
-  // ボールを描画
   noStroke();
-  fill(c);
-  ellipse(x, y, 2*radius, 2*radius);
+  // b1を描画
+  fill(b1.c);
+  ellipse(b1.x, b1.y, b1.radius*2, b1.radius*2);
+  // b2を描画
+  fill(b2.c);
+  ellipse(b2.x, b2.y, b2.radius*2, b2.radius*2);
+}
+
+class Ball {
+  // フィールド
+  float x, y;
+  int radius;
+  color c;
+
+  // コンストラクタ
+  Ball() {
+    // フィールドの代入処理
+    radius = (int)random(25, 50);
+    x = random(radius, width-radius);
+    y = random(radius, height-radius);
+    c = color(random(255), random(255), random(255), random(128, 255));
+  }
 }

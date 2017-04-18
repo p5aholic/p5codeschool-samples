@@ -1,42 +1,43 @@
-int numBalls = 100; // ボールの数
-float[] x = new float[numBalls];  // x座標の配列
-float[] y = new float[numBalls];  // y座標の配列
-float[] vx = new float[numBalls]; // x軸方向の速度の配列
-float[] vy = new float[numBalls]; // y軸方向の速度の配列
-int[] radius = new int[numBalls]; // 半径の配列
-color[] c = new color[numBalls];  // 色の配列
+Ball b1, b2, b3;
 
 void setup() {
   size(960, 540);
-  // 初期値を設定
-  for (int i = 0; i < numBalls; i++) {
-    radius[i] = (int)random(10, 20);
-    x[i] = random(radius[i], width-radius[i]);
-    y[i] = random(radius[i], height-radius[i]);
-    vx[i] = random(-5, 5);
-    vy[i] = random(-5, 5);
-    c[i] = color(random(255), random(255), random(255), random(255));
-  }
+  // 実引数ありのコンストラクタを呼び出す
+  // 赤
+  b1 = new Ball(280, height/2, 100, color(255, 0, 0));
+  // 青
+  b2 = new Ball(480, height/2, 100, color(0, 255, 0));
+  // 緑
+  b3 = new Ball(680, height/2, 100, color(0, 0, 255));
 }
 
 void draw() {
   background(255);
 
-  for (int i = 0; i < numBalls; i++) {
-    // ボールの位置を更新
-    x[i] += vx[i];
-    y[i] += vy[i];
-    // 左右の壁との当たり判定
-    if (x[i]-radius[i] <= 0 || x[i]+radius[i] >= width) {
-      vx[i] *= -1;
-    }
-    // 上下の壁との当たり判定
-    if (y[i]-radius[i] <= 0 || y[i]+radius[i] >= height) {
-      vy[i] *= -1;
-    }
-    // ボールを描画
-    noStroke();
-    fill(c[i]);
-    ellipse(x[i], y[i], 2*radius[i], 2*radius[i]);
+  noStroke();
+  // b1を描画
+  fill(b1.c);
+  ellipse(b1.x, b1.y, b1.radius*2, b1.radius*2);
+  // b2を描画
+  fill(b2.c);
+  ellipse(b2.x, b2.y, b2.radius*2, b2.radius*2);
+  // b3を描画
+  fill(b3.c);
+  ellipse(b3.x, b3.y, b3.radius*2, b3.radius*2);
+}
+
+class Ball {
+  // フィールド
+  float x, y;
+  int radius;
+  color c;
+
+  // 仮引数を持つコンストラクタ
+  Ball(float bx, float by, int rad, color bc) {
+    // 仮引数に対応するフィールドに代入を行う
+    x = bx;
+    y = by;
+    radius = rad;
+    c = bc;
   }
 }

@@ -1,22 +1,37 @@
 void setup() {
-  size(960, 540);
-  noLoop();
+  size(960, 540, P3D);
   stroke(0);
-  strokeWeight(10);
+  strokeWeight(2);
 }
 
 void draw() {
   background(255);
-  translate(width/2, height/2);
 
-  // 0度から360度になるまで5度ずつ増やす
-  for (int i = 0; i < 360; i += 5) {
-    // ラジアンに変換
-    float angle = radians(i);
-    // 半径150の円上の座標を計算
-    float x = 150 * cos(angle);
-    float y = 150 * sin(angle);
-    // 点を描画
-    point(x, y);
-  }
+  // x軸中心に回転する赤色の箱
+  pushMatrix();
+  translate(width/2, height/2-100, 0);
+  rotateX(frameCount*0.03);
+  fill(255, 0, 0);
+  box(50);
+  popMatrix();
+
+  // y軸中心に回転する緑色の箱
+  pushMatrix();
+  translate(width/2, height/2, 0);
+  rotateY(frameCount*0.03);
+  fill(0, 255, 0);
+  box(50);
+  popMatrix();
+
+  // z軸中心に回転する青色の箱
+  pushMatrix();
+  translate(width/2, height/2+100, 0);
+  rotateZ(frameCount*0.03); // rotate()でも可
+  fill(0, 0, 255);
+  box(50);
+  popMatrix();
+}
+
+void mousePressed() {
+  saveFrame("sketch04.jpg");
 }
