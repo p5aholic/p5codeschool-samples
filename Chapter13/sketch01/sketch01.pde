@@ -14,6 +14,7 @@ color racketC;        // 色
 
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   // ボール初期値を設定
   for (int i = 0; i < numBalls; i++) {
     radius[i] = (int)random(10, 20);
@@ -21,7 +22,7 @@ void setup() {
     y[i] = random(radius[i], height-radius[i]);
     vx[i] = random(-5, 5);
     vy[i] = random(-5, 5);
-    c[i] = color(random(255), random(255), random(255), random(255));
+    c[i] = color(random(255), random(255), random(255));
   }
   // ラケットの初期値を設定
   racketX = width/2;
@@ -57,4 +58,10 @@ void draw() {
   fill(racketC);
   rectMode(CENTER);
   rect(racketX, racketY, racketW, racketH);
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch01.jpg");
+  }
 }
