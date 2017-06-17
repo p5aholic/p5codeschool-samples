@@ -1,5 +1,6 @@
 void setup() {
   size(960, 540, P3D);
+  pixelDensity(displayDensity());
   stroke(0);
   strokeWeight(3);
   fill(128);
@@ -57,6 +58,8 @@ void draw() {
   popMatrix();
 }
 
-void mousePressed() {
-  saveFrame("sketch07.jpg");
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch07.jpg");
+  }
 }

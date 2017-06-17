@@ -1,5 +1,6 @@
 void setup() {
   size(960, 540, P3D);
+  pixelDensity(displayDensity());
   noLoop();
   stroke(0);
   strokeWeight(15);
@@ -18,5 +19,6 @@ void draw() {
       point(pointX, pointY, pointZ);
     }
   }
+  
   saveFrame("sketch06.jpg");
 }

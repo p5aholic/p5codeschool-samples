@@ -1,5 +1,6 @@
 void setup() {
   size(960, 540, P3D);
+  pixelDensity(displayDensity());
   stroke(255);
   noFill();
 }
@@ -18,6 +19,8 @@ void draw() {
   sphere(100);
 }
 
-void mousePressed () {
-  saveFrame("sketch03.jpg");
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch03.jpg");
+  }
 }

@@ -5,6 +5,7 @@ float speed = 12;
 
 void setup() {
   size(960, 540, P3D);
+  pixelDensity(displayDensity());
 }
 
 void draw() {
@@ -33,6 +34,8 @@ void draw() {
   line(0, 0, 0, 0, 0, 500);
 }
 
-void mousePressed() {
-  saveFrame("sketch08.jpg");
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch08.jpg");
+  }
 }

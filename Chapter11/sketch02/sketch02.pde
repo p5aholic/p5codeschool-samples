@@ -1,5 +1,6 @@
 void setup() {
   size(960, 540, P3D);
+  pixelDensity(displayDensity());
   noLoop();
 }
 
@@ -21,5 +22,6 @@ void draw() {
   // 半径100の球体
   sphere(100);
   popMatrix();
+  
   saveFrame("sketch02.jpg");
 }

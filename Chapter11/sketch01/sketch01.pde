@@ -1,6 +1,7 @@
 void setup() {
   // レンダラをP3Dに
   size(960, 540, P3D);
+  pixelDensity(displayDensity());
   noLoop();
   stroke(220);
   strokeWeight(5);
@@ -24,5 +25,6 @@ void draw() {
   // 幅100px、高さ50px、奥行き200pxの箱
   box(100, 50, 200);
   popMatrix();
+
   saveFrame("sketch01.jpg");
 }
