@@ -2,6 +2,7 @@ int x, y; // 円の座標
 
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   noStroke();
   fill(0);
   x = width/2;

@@ -1,5 +1,6 @@
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   background(255);
   noStroke();
   fill(0);
@@ -8,10 +9,6 @@ void setup() {
 void draw() {
   // マウスが押されているとき
   if (mousePressed) {
-    ellipse(random(width), random(height), 50, 50);
-  }
-  // 押されてないとき
-  else {
-    ellipse(width/2, height/2, 50, 50);
+    ellipse(mouseX, mouseY, random(50), random(50));
   }
 }

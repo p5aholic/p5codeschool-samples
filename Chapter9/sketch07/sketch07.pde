@@ -1,5 +1,6 @@
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   background(255);
   noStroke();
   rectMode(CENTER);

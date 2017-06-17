@@ -3,6 +3,7 @@ int y = 0; // 横棒のy座標
 
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   strokeWeight(5);
   stroke(0);
 }
@@ -18,11 +19,6 @@ void draw() {
     // 右ボタンが押されているとき
     else if (mouseButton == RIGHT) {
       y += 2;
-    }
-    // 真ん中のボタンが押されているとき
-    else if (mouseButton == CENTER) {
-      x = 0;
-      y = 0;
     }
   }
   // 縦棒
