@@ -1,4 +1,5 @@
 size(960, 540);
+pixelDensity(displayDensity());
 background(255);
 noStroke();
 
@@ -15,4 +16,5 @@ rect(0, 0, 540, 50);
 rotate(radians(30));
 fill(0, 0, 255);
 rect(0, 0, 540, 50);
+
 saveFrame("sketch05.jpg");

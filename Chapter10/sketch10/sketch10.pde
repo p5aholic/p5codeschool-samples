@@ -1,4 +1,5 @@
 size(960, 540);
+pixelDensity(displayDensity());
 background(255);
 noFill();
 
@@ -18,4 +19,5 @@ ellipse(0, 0, 50, 50);
 scale(2.0);
 stroke(0, 0, 255);
 ellipse(0, 0, 50, 50);
+
 saveFrame("sketch10.jpg");

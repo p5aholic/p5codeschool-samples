@@ -1,5 +1,6 @@
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   rectMode(CENTER);
   stroke(0);
   strokeWeight(5);
@@ -22,4 +23,10 @@ void draw() {
   rotate(-frameCount*0.05);
   rect(0, 0, 100, 100);
   popMatrix();
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch12.jpg");
+  }
 }

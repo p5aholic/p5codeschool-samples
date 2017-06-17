@@ -1,4 +1,5 @@
 size(960, 540);
+pixelDensity(displayDensity());
 background(255);
 noStroke();
 
@@ -27,4 +28,5 @@ translate(width/2+200, height/2+100);
 fill(0, 0, 255);
 ellipse(0, 0, 80, 80);
 popMatrix();
+
 saveFrame("sketch03.jpg");

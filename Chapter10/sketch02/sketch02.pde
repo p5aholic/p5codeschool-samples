@@ -1,4 +1,5 @@
 size(960, 540);
+pixelDensity(displayDensity());
 background(255);
 noStroke();
 
@@ -22,4 +23,5 @@ translate(100, 50);
 // 原点に青色の円を描画
 fill(0, 0, 255);
 ellipse(0, 0, 80, 80);
+
 saveFrame("sketch02.jpg");

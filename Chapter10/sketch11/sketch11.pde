@@ -1,4 +1,5 @@
 size(960, 540);
+pixelDensity(displayDensity());
 background(255);
 stroke(0);
 strokeWeight(5);
@@ -29,7 +30,7 @@ point(0, 0);
 popMatrix();
 
 pushMatrix();
-translate(500, height/2);
+translate(700, height/2);
 // 回転と拡大
 rotate(radians(90));
 scale(3.0);
@@ -37,4 +38,5 @@ fill(0, 0, 255);
 rect(0, 0, 100, 40);
 point(0, 0);
 popMatrix();
+
 saveFrame("sketch11.jpg");
