@@ -5,13 +5,14 @@ color c;      // ボールの色
 
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   // 初期値を設定
-  radius = (int)random(10, 20);
+  radius = (int)random(30, 60);
   x = random(radius, width-radius);
   y = random(radius, height-radius);
   vx = random(-5, 5);
   vy = random(-5, 5);
-  c = color(random(255), random(255), random(255), random(255));
+  c = color(random(255), random(255), random(255));
 }
 
 void draw() {
@@ -32,4 +33,10 @@ void draw() {
   noStroke();
   fill(c);
   ellipse(x, y, 2*radius, 2*radius);
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch06.jpg");
+  }
 }

@@ -8,6 +8,7 @@ color[] c = new color[numBalls];  // 色の配列
 
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   // 初期値を設定
   for (int i = 0; i < numBalls; i++) {
     radius[i] = (int)random(10, 20);
@@ -15,7 +16,7 @@ void setup() {
     y[i] = random(radius[i], height-radius[i]);
     vx[i] = random(-5, 5);
     vy[i] = random(-5, 5);
-    c[i] = color(random(255), random(255), random(255), random(255));
+    c[i] = color(random(255), random(255), random(255));
   }
 }
 
@@ -38,5 +39,11 @@ void draw() {
     noStroke();
     fill(c[i]);
     ellipse(x[i], y[i], 2*radius[i], 2*radius[i]);
+  }
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch07.jpg");
   }
 }

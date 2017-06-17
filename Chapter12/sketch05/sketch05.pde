@@ -4,6 +4,7 @@ int rectWidth;    // 棒の横幅
 
 void setup() {
   size(960, 540);
+  pixelDensity(displayDensity());
   noLoop();
   // dataの要素に値を入れる
   setData();
@@ -30,4 +31,10 @@ void draw() {
 void mousePressed() {
   setData();
   redraw();
+}
+
+void keyPressed() {
+  if (key == 's') {
+    saveFrame("sketch05.jpg");
+  }
 }
